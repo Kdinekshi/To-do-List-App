@@ -67,6 +67,14 @@ const updateProgress = () => {
     document.getElementById("numbers").textContent = `${completedTasks}/${tasks.length}`;
 };
 
+function updateDateTime() {
+    const now = new Date();
+    document.getElementById('dateTime').textContent = now.toLocaleString();
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+
 // Add event listener for the form
 document.getElementById("taskForm").addEventListener("submit", function (e) {
     e.preventDefault();
