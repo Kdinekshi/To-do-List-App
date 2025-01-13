@@ -1,7 +1,6 @@
-// Task data array
+ 
 let tasks = [];
-
-// Add a new task
+ 
 const addTask = () => {
     const taskInput = document.getElementById("taskInput");
     const text = taskInput.value.trim();
@@ -11,8 +10,7 @@ const addTask = () => {
         updateTaskList();
     }
 };
-
-// Update the task list
+ 
 const updateTaskList = () => {
     const taskList = document.getElementById("taskList");
     taskList.innerHTML = "";
@@ -37,7 +35,7 @@ const updateTaskList = () => {
     updateProgress();
 };
 
-// Toggle task completion
+ 
 const toggleTask = (index) => {
     tasks[index].completed = !tasks[index].completed;
     updateTaskList();
@@ -49,7 +47,7 @@ const deleteTask = (index) => {
     updateTaskList();
 };
 
-// Edit a task
+ 
 const editTask = (index) => {
     const newText = prompt("Edit your task:", tasks[index].text);
     if (newText) {
@@ -57,8 +55,7 @@ const editTask = (index) => {
         updateTaskList();
     }
 };
-
-// Update progress bar and task status
+ 
 const updateProgress = () => {
     const completedTasks = tasks.filter(task => task.completed).length;
     const progress = (completedTasks / tasks.length) * 100 || 0;
@@ -74,8 +71,7 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-
-// Add event listener for the form
+ 
 document.getElementById("taskForm").addEventListener("submit", function (e) {
     e.preventDefault();
     addTask();

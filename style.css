@@ -1,4 +1,4 @@
-/* General styles */
+ 
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +13,14 @@
     --teal: #b4cac6;
 }
 
-/* Body styling */
+ 
 body {
     background-color: var(--background);
     color: var(--text);
     font-family: Arial, sans-serif;
 }
 
-/* Main container styling */
+ 
 .container {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@ body {
     max-width: 500px;
 }
 
-/* Status container */
+ 
 .status-container {
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,7 @@ body {
     font-weight: bold;
 }
 
-/* Form styling */
+ 
 form {
     margin-top: 20px;
     display: flex;
@@ -102,7 +102,7 @@ form button {
     outline: none;
 }
 
-/* Task list styling */
+ 
 .task-list {
     list-style: none;
     margin-top: 20px;
