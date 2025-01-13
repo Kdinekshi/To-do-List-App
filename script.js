@@ -9,9 +9,6 @@ const addTask = () => {
         updateTaskList();
     }  
 };
-const updateTaskList = ()=> {
-    const taskList = document.getElementById('task-list')
-    taskList.innerHTML = ''
 
     task.forEach(task =>{
         const listItem = document.createElement('li')
@@ -29,6 +26,5 @@ document.getElementById("submit"),addEventListener('click',function(e){
     e.preventDefault();
 
     addTask();
-     
 });
     
