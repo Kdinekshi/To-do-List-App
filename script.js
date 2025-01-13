@@ -1,29 +1,74 @@
+// Task data array
 let tasks = [];
 
+// Add a new task
 const addTask = () => {
-    const tastInput = document.getElementById('taskInput')
+    const taskInput = document.getElementById("taskInput");
     const text = taskInput.value.trim();
-    if(text){
-        tasks.push({text:text, compeleted: false});
-        taskInput.value ="" ;
+    if (text) {
+        tasks.push({ text: text, completed: false });
+        taskInput.value = "";
         updateTaskList();
-    }  
+    }
 };
 
-    task.forEach(task =>{
-        const listItem = document.createElement('li')
-        
+// Update the task list
+const updateTaskList = () => {
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+        const listItem = document.createElement("li");
+
         listItem.innerHTML = `
-        <div class="taskItem">
-        <input type = "
-        </div>`
+            <div>
+                <input type="checkbox" ${task.completed ? "checked" : ""} onchange="toggleTask(${index})">
+                <span class="${task.completed ? "completed" : ""}">${task.text}</span>
+            </div>
+            <div class="actions">
+                <button onclick="editTask(${index})">✏️</button>
+                <button onclick="deleteTask(${index})">🗑️</button>
+            </div>
+        `;
 
-    })
-}
+        taskList.appendChild(listItem);
+    });
 
+    updateProgress();
+};
 
-document.getElementById("submit"),addEventListener('click',function(e){
+// Toggle task completion
+const toggleTask = (index) => {
+    tasks[index].completed = !tasks[index].completed;
+    updateTaskList();
+};
+
+// Delete a task
+const deleteTask = (index) => {
+    tasks.splice(index, 1);
+    updateTaskList();
+};
+
+// Edit a task
+const editTask = (index) => {
+    const newText = prompt("Edit your task:", tasks[index].text);
+    if (newText) {
+        tasks[index].text = newText.trim();
+        updateTaskList();
+    }
+};
+
+// Update progress bar and task status
+const updateProgress = () => {
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const progress = (completedTasks / tasks.length) * 100 || 0;
+
+    document.getElementById("progress").style.width = `${progress}%`;
+    document.getElementById("numbers").textContent = `${completedTasks}/${tasks.length}`;
+};
+
+// Add event listener for the form
+document.getElementById("taskForm").addEventListener("submit", function (e) {
     e.preventDefault();
     addTask();
 });
-    

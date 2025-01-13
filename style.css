@@ -1,100 +1,139 @@
-*{
+/* General styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --background: #06253f;
+    --secondaryBackground: #282828;
+    --text: #ffffff;
+    --purple: #0cd89b;
+    --teal: #b4cac6;
+}
 
-:root{
-    --backgroud : #fefffc;
-    --secondaryBackgroud : #ddd9db;
-    --text : #135a70;
-    --purple : #5ea4b6;
-    --teal : #f4f2f5;
+/* Body styling */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
 }
-body{
-   background-color:var(--backgroud);
-   color: var(--text);
-}
-.container{
+
+/* Main container styling */
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 120px auto 0 auto;
+    margin: 100px auto;
     max-width: 500px;
-    box-shadow: #a895a8;
-    box-decoration-break: slice;
-    
 }
-.status-container{
-    padding: 30px;
-    border-radius: 20px;
-    border: 2px solid var(--teal);
+
+/* Status container */
+.status-container {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
-    width: 100%;
-}
-.details{
-    width: 100%;
-}
-#progress{
-    width: 50%;
-    height: 10px;
-    background-color: var(--purple);
+    padding: 20px;
     border-radius: 10px;
-    transition: all 0.3s ease;
-}
-#progressBar{
+    background-color: var(--secondaryBackground);
     width: 100%;
-    height:10px;
-    margin-top: 15px;
-    background-color:var(--secondaryBackgroud);
-    border-radius: 5px;
-    
-
-
 }
-#numbers{
+
+.details {
+    flex: 1;
+}
+
+#progressBar {
+    background-color: var(--teal);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#progress {
+    background-color: var(--purple);
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.status-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60px;
     height: 60px;
-    background-color:var(--purple);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--purple);
     border-radius: 50%;
-    font-size: 25px;
-    font-weight: bold;    
+    font-size: 20px;
+    font-weight: bold;
 }
-form{
-    width: 100%;
-    margin-top: 50px;
+
+/* Form styling */
+form {
+    margin-top: 20px;
     display: flex;
-    gap: 20px;
-    box-shadow: 100px;
-}
-input{
-    flex: 1;
+    gap: 10px;
     width: 100%;
-    padding: 12px;
-    background-color: var(--secondaryBackgroud);
-    border-radius: 10px;
-    border: 1px solid var(--secondaryBackgroud);
-    outline: none;
-    color: var(--text);
-    
 }
-button{
+
+form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryBackground);
+    color: var(--text);
+    outline: none;
+}
+
+form button {
     width: 50px;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    border-radius: 100%;
-    align-items: center;
+    border: none;
+    border-radius: 50%;
     background-color: var(--purple);
     color: var(--text);
     font-size: 20px;
-    font-weight: bold;
-    outline: none; 
+    cursor: pointer;
+    outline: none;
+}
+
+/* Task list styling */
+.task-list {
+    list-style: none;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.task-list li {
+    background-color: var(--secondaryBackground);
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.task-list li .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-list li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.task-list li span.completed {
+    text-decoration: line-through;
+    color: #777;
 }

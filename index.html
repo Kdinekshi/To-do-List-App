@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
-    <link rel = "stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
-    <div class="status-container">
-        <div class="details">
-            <h1>Todo App</h1>
-            <p>Keep it up</p>
-            <div id="progressBar">
-                <div id="progress"> </div>
+        <!-- Status Section -->
+        <div class="status-container">
+            <div class="details">
+                <p id="dateTime"></p>
+                <h1>Todo App</h1>
+                <p>Keep it up!</p>
+                <div id="progressBar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="status-number">
+                <p id="numbers">0/0</p>
             </div>
         </div>
-            <div class="status-number">
-              <p id="numbers">2/3</p>  
-            </div>
 
+        <!-- Task Input Section -->
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Write your task...">
+            <button type="submit">+</button>
+        </form>
+
+        <!-- Task List -->
+        <ul id="taskList" class="task-list"></ul>
     </div>
 
-    <form action="">
-        <input type="text" id="taskInput" placeholder="Write your task..">
-        <button type="submit">+</button>
-    </form>
-    
-    <ul class="task-list"></ul>
-    </div>
-    <script? src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
+</html>
