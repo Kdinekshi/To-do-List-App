@@ -24,7 +24,6 @@ const addTask = () => {
 
 document.getElementById("submit"),addEventListener('click',function(e){
     e.preventDefault();
-
     addTask();
 });
     
