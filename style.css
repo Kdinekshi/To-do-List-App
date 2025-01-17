@@ -6,11 +6,11 @@
 }
 
 :root {
-    --background: #06253f;
-    --secondaryBackground: #282828;
-    --text: #ffffff;
-    --purple: #0cd89b;
-    --teal: #b4cac6;
+    --background: #fdfafa;
+    --secondaryBackground: #acc2b1;
+    --text: #141414;
+    --purple: #84f38a;
+    --teal: #d5dbce;
 }
 
  
@@ -36,7 +36,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--secondaryBackground);
+    box-shadow: 0 0 10px rgba(3, 28, 65, 0.1);
     width: 100%;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 #progressBar {
-    background-color: var(--teal);
+     
     height: 10px;
     border-radius: 5px;
     margin-top: 10px;
@@ -54,7 +54,7 @@ body {
 }
 
 #progress {
-    background-color: var(--purple);
+    background-color: var(--teal);
     height: 100%;
     width: 0;
     transition: width 0.3s ease;
@@ -69,7 +69,7 @@ body {
     background-color: var(--purple);
     border-radius: 50%;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold;;
 }
 
  
@@ -82,11 +82,11 @@ form {
 
 form input {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     border: none;
-    border-radius: 5px;
-    background-color: var(--secondaryBackground);
-    color: var(--text);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(3, 28, 65, 0.1);
+    
     outline: none;
 }
 
@@ -97,7 +97,7 @@ form button {
     border-radius: 50%;
     background-color: var(--purple);
     color: var(--text);
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     outline: none;
 }
@@ -110,7 +110,7 @@ form button {
 }
 
 .task-list li {
-    background-color: var(--secondaryBackground);
+    box-shadow: 0 0 10px rgba(19, 37, 65, 0.1);
     padding: 15px;
     margin-bottom: 10px;
     display: flex;
@@ -118,11 +118,13 @@ form button {
     align-items: center;
     border-radius: 5px;
     position: relative;
+    font-size: 13px;
 }
 
 .task-list li .actions {
     display: flex;
     gap: 10px;
+    
 }
 
 .task-list li button {
