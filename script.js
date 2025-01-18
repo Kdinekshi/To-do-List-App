@@ -1,6 +1,5 @@
- 
 let tasks = [];
- 
+
 const addTask = () => {
     const taskInput = document.getElementById("taskInput");
     const text = taskInput.value.trim();
@@ -64,15 +63,22 @@ const updateProgress = () => {
     document.getElementById("numbers").textContent = `${completedTasks}/${tasks.length}`;
 };
 
-function updateDateTime() {
-    const now = new Date();
-    document.getElementById('dateTime').textContent = now.toLocaleString();
-}
-setInterval(updateDateTime, 1000);
-updateDateTime();
-
- 
 document.getElementById("taskForm").addEventListener("submit", function (e) {
     e.preventDefault();
     addTask();
 });
+
+const updateDateTime = ()=> {
+    const greetingElement = document.querySelector(".todo-app-title")
+    const now = new Date().getHours();
+    let greeting = "Good Evening";
+    if(now >= 6 && now < 12){
+        greeting = "Good Morning";
+} 
+    else if(now < 18){
+        greeting = "Good Afternoon";
+    }
+    greetingElement.textContent = greeting +", Kaveesha 👋 ";
+ 
+}
+updateDateTime();
